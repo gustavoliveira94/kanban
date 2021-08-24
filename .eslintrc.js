@@ -31,6 +31,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     '@next/next/no-img-element': 'off',
     'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'prettier/prettier': [
       'error',
       {
