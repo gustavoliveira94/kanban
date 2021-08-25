@@ -1,8 +1,9 @@
 import { Row, Col } from 'react-bootstrap';
 
 import Column from 'components/Column';
+import AddItem from 'components/AddItem';
 import Board from 'components/Board';
-import Card from 'components/Card';
+import Card from 'components/Task';
 
 import { Title } from './styles';
 
@@ -29,6 +30,13 @@ const Home: React.FC = () => {
                 <Card title="Criar Board" tag="tag1" />
               </>
             </Column>
+            <Column
+              title=""
+              color="rgba(0, 0, 0, 0.1)"
+              addItem={
+                <AddItem title="Adicionar outra lista" textColor="#212529" />
+              }
+            />
           </Board>
         </Col>
       </Row>

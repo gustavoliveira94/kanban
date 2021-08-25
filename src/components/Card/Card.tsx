@@ -1,15 +1,13 @@
 import { Container } from './styles';
 
 interface CardProps {
-  title: string;
-  tag: string;
+  color: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, tag }) => {
+const Card: React.FC<CardProps> = ({ children, color, ...rest }) => {
   return (
-    <Container data-testid="card">
-      <h3>{title}</h3>
-      <p>{tag}</p>
+    <Container color={color} {...rest}>
+      {children}
     </Container>
   );
 };
