@@ -1,7 +1,7 @@
 import { Row, Col } from 'react-bootstrap';
 
 import Column from 'components/Column';
-import Kanbans from 'components/Kanbans';
+import Board from 'components/Board';
 
 import { Title } from './styles';
 
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <Kanbans>
+          <Board>
             <Column title="To Do" color="#5CC4FF">
               <p>Teste</p>
             </Column>
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
             <Column title="Done" color="#59D090">
               <p>Teste</p>
             </Column>
-          </Kanbans>
+          </Board>
         </Col>
       </Row>
     </>
