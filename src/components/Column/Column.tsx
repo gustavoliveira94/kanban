@@ -1,17 +1,26 @@
-import { Container, Title } from './styles';
+import Card from 'components/Card';
+import AddItem from 'components/AddItem';
+
+import { Title } from './styles';
 
 interface ColumnProps {
   color: string;
   title: string;
-  children: JSX.Element;
+  addItem?: JSX.Element;
 }
 
-const Column: React.FC<ColumnProps> = ({ children, color, title }) => {
+const Column: React.FC<ColumnProps> = ({
+  children,
+  color,
+  title,
+  addItem = <AddItem title="Adicionar outro cartão" textColor="#fff" />,
+}) => {
   return (
-    <Container color={color}>
-      <Title>{title}</Title>
+    <Card color={color} data-testid="column">
+      {title && <Title>{title}</Title>}
       {children}
-    </Container>
+      {addItem}
+    </Card>
   );
 };
 
