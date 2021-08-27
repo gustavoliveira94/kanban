@@ -1,7 +1,7 @@
 import { render, within } from '@testing-library/react';
 
 import Task from 'components/Task';
-import AddItem from 'components/AddItem';
+import AddItem from 'components/TextAddItem';
 import Column from '../Column';
 
 describe('Testing Component <Column />', () => {
@@ -9,8 +9,8 @@ describe('Testing Component <Column />', () => {
     const { getByText, getByTestId } = render(
       <Column title="Done" color="#000">
         <>
-          <Task title="Criar Board" tag="tag1" />
-          <Task title="Criar Card" tag="tag2" />
+          <Task title="Criar Board" tag="tag1" color="#000" />
+          <Task title="Criar Card" tag="tag2" color="#000" />
         </>
       </Column>,
     );

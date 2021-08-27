@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Container as Card } from 'components/Card/styles';
+import { Container as Card } from 'atoms/Card/styles';
 
 export const Container = styled(Card)`
   width: 100%;
@@ -19,7 +19,7 @@ export const Container = styled(Card)`
 
   p {
     width: fit-content;
-    background-color: #59d090;
+    background-color: ${({ color }) => color};
     border-radius: 5px;
     padding: 5px 10px;
     color: #ffffff;
