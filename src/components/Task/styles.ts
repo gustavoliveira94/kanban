@@ -12,7 +12,6 @@ export const Container = styled(Card)`
   margin-bottom: 10px;
 
   h3 {
-    width: 170px;
     font-size: 16px;
     font-weight: 500;
     color: #212529;
@@ -22,6 +21,7 @@ export const Container = styled(Card)`
 
   p {
     width: fit-content;
+    max-width: 180px;
     background-color: ${({ color }) => color};
     border-radius: 5px;
     padding: 5px 10px;
@@ -34,14 +34,17 @@ export const Container = styled(Card)`
 export const Edit = styled.select`
   position: absolute;
   right: 10px;
-  top: 50px;
+  bottom: 22px;
   border: 0;
   width: 65px;
 `;
 
 export const Remove = styled.button`
   position: absolute;
-  right: 10px;
+  right: 5px;
+  top: 0;
   border: 0;
   background-color: transparent;
+  color: #e81224;
+  font-weight: bold;
 `;

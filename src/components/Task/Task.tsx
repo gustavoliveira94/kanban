@@ -45,7 +45,7 @@ const Task: React.FC<CardProps> = ({ idColumn, idTask, title, tag, color }) => {
         ))}
       </Edit>
       <Remove onClick={() => dispatch(removeTask({ idTask, idColumn }))}>
-        Remover
+        X
       </Remove>
       <h3>{title}</h3>
       <p>{tag}</p>
