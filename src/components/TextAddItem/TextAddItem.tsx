@@ -5,11 +5,12 @@ import { Container } from './styles';
 interface AddItemProps {
   title: string;
   textColor: string;
+  onClick: () => void;
 }
 
-const AddItem: React.FC<AddItemProps> = ({ title, textColor }) => {
+const TextAddItem: React.FC<AddItemProps> = ({ title, textColor, onClick }) => {
   return (
-    <Container textColor={textColor}>
+    <Container data-testid="add-item" textColor={textColor} onClick={onClick}>
       <span>
         <Plus color={textColor} /> {title}
       </span>
@@ -17,4 +18,4 @@ const AddItem: React.FC<AddItemProps> = ({ title, textColor }) => {
   );
 };
 
-export default AddItem;
+export default TextAddItem;

@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { wrapper } from 'store/reduxConfig';
+import { wrapper } from 'store';
 
 import Background from 'components/Background';
 import { GlobalStyles } from 'styles/globals';

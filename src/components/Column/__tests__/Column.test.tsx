@@ -1,16 +1,40 @@
-import { render, within } from '@testing-library/react';
+import { within } from '@testing-library/react';
+
+import renderWithRedux from 'tests/helper';
 
 import Task from 'components/Task';
-import AddItem from 'components/AddItem';
+import AddItem from 'components/TextAddItem';
 import Column from '../Column';
 
 describe('Testing Component <Column />', () => {
   it('Check render props', () => {
-    const { getByText, getByTestId } = render(
-      <Column title="Done" color="#000">
+    const { getByText, getByTestId } = renderWithRedux(
+      <Column
+        title="Done"
+        color="#000"
+        addItem={
+          <AddItem
+            onClick={jest.fn()}
+            title="Adicionar outro cartão"
+            textColor="#212529"
+          />
+        }
+      >
         <>
-          <Task title="Criar Board" tag="tag1" />
-          <Task title="Criar Card" tag="tag2" />
+          <Task
+            title="Criar Board"
+            tag="tag1"
+            color="#000"
+            idColumn="1"
+            idTask="1"
+          />
+          <Task
+            title="Criar Card"
+            tag="tag2"
+            color="#000"
+            idColumn="1"
+            idTask="1"
+          />
         </>
       </Column>,
     );
@@ -28,11 +52,17 @@ describe('Testing Component <Column />', () => {
   });
 
   it('Render addItem custom', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithRedux(
       <Column
         title="Done"
         color="#000"
-        addItem={<AddItem title="Adicionar outra lista" textColor="#212529" />}
+        addItem={
+          <AddItem
+            onClick={jest.fn()}
+            title="Adicionar outra lista"
+            textColor="#212529"
+          />
+        }
       />,
     );
 

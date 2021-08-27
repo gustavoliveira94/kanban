@@ -1,20 +1,14 @@
-import Card from 'components/Card';
-import AddItem from 'components/AddItem';
+import Card from 'atoms/Card';
 
 import { Title } from './styles';
 
 interface ColumnProps {
   color: string;
   title: string;
-  addItem?: JSX.Element;
+  addItem: JSX.Element;
 }
 
-const Column: React.FC<ColumnProps> = ({
-  children,
-  color,
-  title,
-  addItem = <AddItem title="Adicionar outro cartão" textColor="#fff" />,
-}) => {
+const Column: React.FC<ColumnProps> = ({ children, color, title, addItem }) => {
   return (
     <Card color={color} data-testid="column">
       {title && <Title>{title}</Title>}
