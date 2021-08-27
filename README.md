@@ -30,7 +30,7 @@ Um kanban simples
 ├─ ├─pages/          # Páginas
 ├─ ├─components/     # Componentes
 ├─ ├─icons/          # Ícones SVG
-├─ ├─models/         # Interfaace ou Types globais
+├─ ├─models/         # Interfaces ou Types globais
 ├─ ├─store/          # Configuração e arquivos relacionados ao redux
 ├─ ├─tests/          # Configuração e arquivos relacionados a testes
 ├─ ├─styles/         # Arquivos relacionados a estilização global
