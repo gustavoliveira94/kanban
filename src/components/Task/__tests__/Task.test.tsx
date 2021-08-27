@@ -17,7 +17,7 @@ describe('Testing Component <Task />', () => {
     );
 
     const buttonRemove = getByRole('button', {
-      name: /remover/i,
+      name: /x/i,
     });
 
     const onClick = jest.fn();
@@ -39,7 +39,7 @@ describe('Testing Component <Task />', () => {
     );
 
     const buttonRemove = getByRole('button', {
-      name: /remover/i,
+      name: /x/i,
     });
 
     const onClick = jest.fn();
