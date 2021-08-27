@@ -9,7 +9,7 @@ interface ModalProps {
 const ModalAddItem: React.FC<ModalProps> = ({ children, show, setShow }) => {
   return (
     <>
-      <Modal show={show} onHide={() => setShow(false)}>
+      <Modal show={show} onHide={() => setShow(false)} data-testid="modal">
         {children}
       </Modal>
     </>

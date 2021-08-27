@@ -46,7 +46,7 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
           Fechar
         </Button>
         <Button variant="primary" onClick={() => setColumn()}>
-          Salvar
+          Criar
         </Button>
       </M.Footer>
     </Modal>

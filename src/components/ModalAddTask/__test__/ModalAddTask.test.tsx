@@ -21,7 +21,7 @@ describe('Testing Component <ModalAddTask />', () => {
     const saveOnClick = jest.fn();
 
     const buttonSave = getByRole('button', {
-      name: /salvar/i,
+      name: /criar/i,
     });
     buttonSave.onclick = saveOnClick;
 
