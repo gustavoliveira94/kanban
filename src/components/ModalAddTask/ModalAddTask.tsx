@@ -75,7 +75,7 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
           Fechar
         </Button>
         <Button variant="primary" onClick={() => setTask()}>
-          Salvar
+          Criar
         </Button>
       </M.Footer>
     </Modal>
