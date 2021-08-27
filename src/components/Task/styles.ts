@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container as Card } from 'atoms/Card/styles';
 
 export const Container = styled(Card)`
+  position: relative;
   width: 100%;
   min-width: fit-content;
   min-height: 90px;
@@ -25,4 +26,18 @@ export const Container = styled(Card)`
     color: #ffffff;
     margin: 0;
   }
+`;
+
+export const Edit = styled.select`
+  position: absolute;
+  right: 80px;
+  border: 0;
+  background-color: transparent;
+`;
+
+export const Remove = styled.button`
+  position: absolute;
+  right: 10px;
+  border: 0;
+  background-color: transparent;
 `;

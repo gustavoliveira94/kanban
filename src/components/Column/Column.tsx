@@ -5,7 +5,7 @@ import { Title } from './styles';
 interface ColumnProps {
   color: string;
   title: string;
-  addItem?: JSX.Element;
+  addItem: JSX.Element;
 }
 
 const Column: React.FC<ColumnProps> = ({ children, color, title, addItem }) => {

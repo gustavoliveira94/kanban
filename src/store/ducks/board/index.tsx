@@ -34,52 +34,19 @@ const initialState = {
       id: '1',
       title: '📝 To Do',
       color: '#5CC4FF',
-      cards: [
-        {
-          id: '1',
-          title: 'Card title 1',
-          tag: 'Card1',
-        },
-        {
-          id: '2',
-          title: 'Card title 2',
-          tag: 'Card2',
-        },
-        {
-          id: '3',
-          title: 'Card title 3',
-          tag: 'Card3',
-        },
-      ],
+      cards: [],
     },
     {
       id: '2',
       title: '💻 In Progress',
       color: '#945AD1',
-      cards: [
-        {
-          id: '9',
-          title: 'Card title 9',
-          tag: 'Card2',
-        },
-      ],
+      cards: [],
     },
     {
       id: '3',
       title: '🚀 Done',
       color: '#59D090',
-      cards: [
-        {
-          id: '10',
-          title: 'Card title 10',
-          tag: 'Card2',
-        },
-        {
-          id: '11',
-          title: 'Card title 11',
-          tag: 'Card2',
-        },
-      ],
+      cards: [],
     },
   ],
 };
@@ -95,7 +62,7 @@ const reducer = (
         columns: [...state.columns, action.payload],
       };
     case types.SET_TASK: {
-      const newCard = state.columns.map((column) => {
+      const newTask = state.columns.map((column) => {
         if (column.id === action.payload.idColumn) {
           return {
             ...column,
@@ -108,7 +75,28 @@ const reducer = (
 
       return {
         ...state,
-        columns: newCard,
+        columns: newTask,
+      };
+    }
+    case types.REMOVE_TASK: {
+      const removeTask = state.columns.map((column) => {
+        if (column.id === action.payload.idColumn) {
+          const remove = column.cards.filter(
+            (card) => card.id !== action.payload.idTask,
+          );
+
+          return {
+            ...column,
+            cards: [...remove],
+          };
+        }
+
+        return column;
+      });
+
+      return {
+        ...state,
+        columns: removeTask,
       };
     }
     default:
@@ -154,6 +142,21 @@ export const addTask = ({ title, tag, idColumn }: IaddTask) => {
         title,
         tag,
       },
+    },
+  };
+};
+
+interface IremoveTask {
+  idTask: string;
+  idColumn: string;
+}
+
+export const removeTask = ({ idTask, idColumn }: IremoveTask) => {
+  return {
+    type: types.REMOVE_TASK,
+    payload: {
+      idTask,
+      idColumn,
     },
   };
 };

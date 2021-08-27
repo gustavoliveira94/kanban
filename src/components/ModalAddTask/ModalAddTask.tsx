@@ -29,8 +29,14 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
   const dispatch = useDispatch();
 
   const setTask = () => {
+    if (!title || !tag) {
+      return;
+    }
+
     dispatch(addTask({ title, tag, idColumn: show.idColumn }));
     setShow({ show: false, idColumn: '' });
+    setTitle('');
+    setTag('');
   };
 
   return (

@@ -10,7 +10,7 @@ interface AddItemProps {
 
 const TextAddItem: React.FC<AddItemProps> = ({ title, textColor, onClick }) => {
   return (
-    <Container textColor={textColor} onClick={onClick}>
+    <Container data-testid="add-item" textColor={textColor} onClick={onClick}>
       <span>
         <Plus color={textColor} /> {title}
       </span>

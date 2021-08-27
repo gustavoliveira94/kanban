@@ -7,7 +7,7 @@ import rootReducer, { AppState } from './rootReducer';
 
 const combinedReducer = rootReducer;
 
-const reducer = (state: AppState, action: DispatchAction) => {
+export const reducer = (state: AppState, action: DispatchAction) => {
   if (action.type === HYDRATE) {
     return {
       ...state,
@@ -17,6 +17,7 @@ const reducer = (state: AppState, action: DispatchAction) => {
   return combinedReducer(state, action);
 };
 
-const store = () => createStore<AppState, DispatchAction, any, any>(reducer);
+export const store = () =>
+  createStore<AppState, DispatchAction, any, any>(reducer);
 
 export const wrapper = createWrapper(store);

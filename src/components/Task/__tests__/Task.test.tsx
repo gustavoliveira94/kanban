@@ -1,11 +1,21 @@
-import { render } from '@testing-library/react';
+import renderWithRedux from 'tests/helper';
 
 import Task from '../Task';
 
-describe('Testing Component <Card />', () => {
+describe('Testing Component <Task />', () => {
   it('Check render props', () => {
-    const { getByText } = render(
-      <Task title="Criar Board" tag="tag1" color="#5CC4FF" />,
+    jest.mock('react-redux', () => ({
+      useDispatch: () => jest.fn(),
+    }));
+
+    const { getByText } = renderWithRedux(
+      <Task
+        idColumn="1"
+        idTask="1"
+        title="Criar Board"
+        tag="tag1"
+        color="#5CC4FF"
+      />,
     );
 
     expect(getByText('tag1')).toBeInTheDocument();

@@ -18,6 +18,10 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
   const dispatch = useDispatch();
 
   const setColumn = () => {
+    if (!title) {
+      return;
+    }
+
     dispatch(addColumn({ title }));
     setShow(false);
   };

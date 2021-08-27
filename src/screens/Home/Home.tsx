@@ -50,6 +50,8 @@ const Home: React.FC = () => {
                     {cards.length
                       ? cards.map((card) => (
                           <Card
+                            idColumn={id}
+                            idTask={card.id}
                             title={card.title}
                             tag={card.tag}
                             color={color}
