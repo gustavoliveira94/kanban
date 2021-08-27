@@ -24,7 +24,9 @@ const Task: React.FC<CardProps> = ({ idColumn, idTask, title, tag, color }) => {
   const { columns } = board;
 
   const moveTask = (id: string) => {
-    if (id === idColumn) {
+    const defaultValue = 'Mover';
+
+    if (id === idColumn || id === defaultValue) {
       return;
     }
 
@@ -35,7 +37,7 @@ const Task: React.FC<CardProps> = ({ idColumn, idTask, title, tag, color }) => {
   return (
     <Container data-testid="task" color={color}>
       <Edit onChange={(e) => moveTask(e.target.value)}>
-        <option defaultValue="Mover">Mover</option>
+        <option>Mover</option>
         {columns.map((column) => (
           <option key={column.id} value={column.id}>
             {column.title}

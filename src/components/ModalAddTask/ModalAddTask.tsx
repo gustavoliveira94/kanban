@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal as M, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 import Modal from 'atoms/Modal';
 import Input from 'atoms/Input';
@@ -30,13 +31,13 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
 
   const setTask = () => {
     if (!title || !tag) {
-      return;
+      return toast.warning('Por favor, digite um título e/ou tag!');
     }
 
     dispatch(addTask({ title, tag, idColumn: show.idColumn }));
     setShow({ show: false, idColumn: '' });
     setTitle('');
-    setTag('');
+    return setTag('');
   };
 
   return (

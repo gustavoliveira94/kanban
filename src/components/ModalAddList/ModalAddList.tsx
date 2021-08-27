@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal as M, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 import { addColumn } from 'store/ducks/board';
 
@@ -19,11 +20,11 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
 
   const setColumn = () => {
     if (!title) {
-      return;
+      return toast.warning('Por favor, digite um título!');
     }
 
     dispatch(addColumn({ title }));
-    setShow(false);
+    return setShow(false);
   };
 
   return (
