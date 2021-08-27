@@ -16,7 +16,8 @@ Um kanban simples
 
 - [React](https://reactjs.org/)
 - [NextJS](https://nextjs.org/)
-- [Material UI](https://material-ui.com/pt)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Redux](https://redux.js.org/)
 
 ## Estrutura de diretórios
 
