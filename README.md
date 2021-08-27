@@ -7,7 +7,7 @@ Um kanban simples
 ## Instalação
 
 1. Baixe e instale o Node: [https://nodejs.org/]
-2. Clone o repositório: `https://github.com/gustavoliveira94/Marvel.git` (HTTPS)
+2. Clone o repositório: `https://github.com/gustavoliveira94/kanban.git` (HTTPS)
 3. \[Opcional\] Instale o Yarn globalmente: `npm install -g yarn`
 4. Instale as dependências do projeto: `yarn install` ou `npm install`
 5. Inicie o ambiente de desenvolvimento: `npm run dev` ou `yarn dev`.
