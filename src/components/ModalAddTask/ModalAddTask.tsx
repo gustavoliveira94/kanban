@@ -43,6 +43,7 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
     <Modal
       show={show.show}
       setShow={() => setShow({ show: false, idColumn: '' })}
+      data-testid="modal-add-list"
     >
       <M.Header closeButton>
         <M.Title>Adicione um cartão!</M.Title>

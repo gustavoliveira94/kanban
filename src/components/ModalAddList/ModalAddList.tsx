@@ -27,11 +27,12 @@ const ModalAddList: React.FC<ModalAddListProps> = ({ show, setShow }) => {
   };
 
   return (
-    <Modal setShow={setShow} show={show}>
+    <Modal setShow={setShow} show={show} data-testid="modal-add-list">
       <M.Header closeButton>
         <M.Title>Adicione uma lista!</M.Title>
       </M.Header>
       <M.Body>
+        <span>Título:</span>
         <Input
           placeholder="Escreva um título"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
