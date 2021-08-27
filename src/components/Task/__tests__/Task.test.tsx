@@ -1,14 +1,12 @@
+import { fireEvent } from '@testing-library/react';
+
 import renderWithRedux from 'tests/helper';
 
 import Task from '../Task';
 
 describe('Testing Component <Task />', () => {
   it('Check render props', () => {
-    jest.mock('react-redux', () => ({
-      useDispatch: () => jest.fn(),
-    }));
-
-    const { getByText } = renderWithRedux(
+    const { getByText, getByRole } = renderWithRedux(
       <Task
         idColumn="1"
         idTask="1"
@@ -18,7 +16,16 @@ describe('Testing Component <Task />', () => {
       />,
     );
 
+    const buttonRemove = getByRole('button', {
+      name: /remover/i,
+    });
+
+    const onClick = jest.fn();
+    buttonRemove.onclick = onClick;
+
     expect(getByText('tag1')).toBeInTheDocument();
     expect(getByText('Criar Board')).toBeInTheDocument();
+    fireEvent.click(buttonRemove);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

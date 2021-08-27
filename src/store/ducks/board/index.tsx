@@ -24,9 +24,8 @@ export const types = {
   REMOVE_COLUMN: 'column/REMOVE',
   SET_TASK: 'task/ADD',
   REMOVE_TASK: 'task/REMOVE',
+  MOVE_TASK: 'task/MOVE',
 };
-
-// Reducer
 
 const initialState = {
   columns: [
@@ -99,12 +98,33 @@ const reducer = (
         columns: removeTask,
       };
     }
+    case types.MOVE_TASK: {
+      const task = state.columns
+        .map((column) =>
+          column.cards.find((card) => card.id === action.payload.idTask),
+        )
+        .find((card) => card);
+
+      const moveTask = state.columns.map((column) => {
+        if (column.id === action.payload.idColumn) {
+          return {
+            ...column,
+            cards: [...column.cards, task],
+          };
+        }
+
+        return column;
+      });
+
+      return {
+        ...state,
+        columns: moveTask,
+      };
+    }
     default:
       return state;
   }
 };
-
-// Action Creators
 
 interface IaddColumn {
   title: string;
@@ -142,6 +162,21 @@ export const addTask = ({ title, tag, idColumn }: IaddTask) => {
         title,
         tag,
       },
+    },
+  };
+};
+
+interface ImoveTask {
+  idTask: string;
+  idColumn: string;
+}
+
+export const moveTask = ({ idTask, idColumn }: ImoveTask) => {
+  return {
+    type: types.MOVE_TASK,
+    payload: {
+      idTask,
+      idColumn,
     },
   };
 };
