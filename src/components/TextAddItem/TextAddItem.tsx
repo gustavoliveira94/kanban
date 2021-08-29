@@ -1,4 +1,4 @@
-import Plus from 'icons/plus';
+import Plus from 'assets/icons/plus';
 
 import { Container } from './styles';
 
