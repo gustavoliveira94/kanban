@@ -1,4 +1,4 @@
-import { createStore } from '@reduxjs/toolkit';
+import { createStore } from 'redux';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 
 import { DispatchAction } from 'models/Store.interface';
